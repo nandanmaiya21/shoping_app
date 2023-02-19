@@ -11,7 +11,6 @@ class ImageScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as List<String>;
     final String imageUrl;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.onBackground,
       appBar: AppBar(
         centerTitle: true,
         title: Text(

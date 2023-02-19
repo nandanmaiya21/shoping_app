@@ -117,6 +117,11 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: const Text('Product Updated!!')));
+
+        setState(() {
+          _isLoading = false;
+        });
+        Navigator.of(context).pop();
       } else {
         try {
           await Provider.of<Products>(context, listen: false).addProduct(

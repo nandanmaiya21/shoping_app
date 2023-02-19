@@ -49,7 +49,6 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.onBackground,
       appBar: AppBar(
         title: Text('MyShop'),
         actions: [

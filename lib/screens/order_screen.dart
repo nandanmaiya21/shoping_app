@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../widgets/app_drawer.dart';
 import '../providers/orders.dart' show Orders;
 import '../widgets/order_item.dart';
+import '../providers/auth.dart';
 
 class OrdersScreen extends StatelessWidget {
   static const routeName = '/orders';
@@ -12,7 +13,6 @@ class OrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // final orderData = Provider.of<Orders>(context);
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.onBackground,
       appBar: AppBar(
         centerTitle: true,
         title: Text('Your Orders'),
@@ -25,6 +25,7 @@ class OrdersScreen extends StatelessWidget {
             return Center(child: CircularProgressIndicator());
           } else {
             if (dataSnapshot.error != null) {
+              print(dataSnapshot.error);
               //Error handling
               throw 'Something';
             } else {
