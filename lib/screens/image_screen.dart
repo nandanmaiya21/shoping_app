@@ -12,6 +12,9 @@ class ImageScreen extends StatelessWidget {
     final String imageUrl;
     return Scaffold(
       appBar: AppBar(
+        leading: const BackButton(
+          color: Colors.orange,
+        ),
         centerTitle: true,
         title: Text(
           data[0],
@@ -22,9 +25,12 @@ class ImageScreen extends StatelessWidget {
         alignment: Alignment.center,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8),
-          child: Image.network(
-            data[1],
-            fit: BoxFit.cover,
+          child: Hero(
+            tag: data[2],
+            child: Image.network(
+              data[1],
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),
